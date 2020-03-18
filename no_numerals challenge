@@ -1,0 +1,207 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace No_numerals
+{
+
+    class Program
+    {
+        static void changestring(int intindex,ref string strinput)
+        {
+            int intnumeral = (int)strinput[intindex];
+            switch (intnumeral)
+            {
+                case 48:
+                    strinput = strinput.Remove(intindex, 1);
+                    strinput = strinput.Insert(intindex, "zero");
+                break;
+                case 49:
+                    strinput = strinput.Remove(intindex, 1);
+                    strinput = strinput.Insert(intindex, "one");
+                    break;
+                case 50:
+                    strinput = strinput.Remove(intindex, 1);
+                    strinput = strinput.Insert(intindex, "two");
+                    break;
+                case 51:
+                    strinput = strinput.Remove(intindex, 1);
+                    strinput = strinput.Insert(intindex, "three");
+                    break;
+                case 52:
+                    strinput = strinput.Remove(intindex, 1);
+                    strinput = strinput.Insert(intindex, "four");
+                    break;
+                case 53:
+                    strinput = strinput.Remove(intindex, 1);
+                    strinput = strinput.Insert(intindex, "five");
+                    break;
+                case 54:
+                    strinput = strinput.Remove(intindex, 1);
+                    strinput = strinput.Insert(intindex, "six");
+                    break;
+                case 55:
+                    strinput = strinput.Remove(intindex, 1);
+                    strinput = strinput.Insert(intindex, "seven");
+                    break;
+                case 56:
+                    strinput = strinput.Remove(intindex, 1);
+                    strinput = strinput.Insert(intindex, "eight");
+                    break;
+                case 57:
+                    strinput = strinput.Remove(intindex, 1);
+                    strinput = strinput.Insert(intindex, "nine");
+                    break;
+
+            }
+            Console.WriteLine("test");
+            return;
+
+        }
+        static void Main(string[] args) {  
+
+            string strx = Console.ReadLine();
+            Console.WriteLine("Testweise Ausgbabe: {0}", strx);
+            if (strx.Length == 1)
+            {
+                int intchartonum = (int)strx[0];
+                string strnumtostring = "keine Ziffer";
+                if (intchartonum > 47 && intchartonum < 59)
+                {
+
+                    switch (intchartonum)
+                    {
+                        case 48:
+                            strnumtostring = "zero";
+                            break;
+                        case 49:
+                            strnumtostring = "one";
+                            break;
+                        case 50:
+                            strnumtostring = "two";
+                            break;
+                        case 51:
+                            strnumtostring = "three";
+                            break;
+                        case 52:
+                            strnumtostring = "four";
+                            break;
+                        case 53:
+                            strnumtostring = "five";
+                            break;
+                        case 54:
+                            strnumtostring = "six";
+                            break;
+                        case 55:
+                            strnumtostring = "seven";
+                            break;
+                        case 56:
+                            strnumtostring = "eight";
+                            break;
+                        case 57:
+                            strnumtostring = "nine";
+                            break;
+                    }
+                }
+                Console.WriteLine(strnumtostring);
+                //just so it doesn't close
+                Console.ReadLine();
+            }
+            /*this else cause is supposed to find the numerals and replace them
+             if there is more than one Char in the array
+             The way its supposed to work is that it searches for spaces and tests
+             if after comes a numeral and then another space while also
+             considering the edgecases in the beginning and end. When it finds them it
+             needs to modify the string and adjust the counter.*/
+            else
+            {
+                int i = 0;
+                while (i < strx.Length - 1)
+                {
+
+                    if (i == 0)
+                    {
+                        if ((int)strx[0] == 32)
+                        {
+                            i++;
+                            if ((int)strx[i] > 47 && (int)strx[i] < 58)
+                            {
+                                if (i + 1 <= strx.Length - 1)
+                                {
+                                    if ((int)strx[i + 1] == 32)
+                                    {
+                                        changestring(i, ref strx);
+                                        //TODO: evertything thats supposed to happen when I found a numeral
+                                        //maybe first test with deleting them if it really finds them?
+                                    }
+                                }
+                                else
+                                {
+                                    changestring(i, ref strx);
+                                    //TODO: evertything thats supposed to happen when I found a numeral
+                                    //maybe first test with deleting them if it really finds them?
+                                }
+                            }
+
+
+                        }
+                        else
+                        {
+                            if ((int)strx[i] > 47 && (int)strx[i] < 58)
+                            {
+                                if (i + 1 <= strx.Length - 1)
+                                {
+                                    if ((int)strx[i + 1] == 32)
+                                    {
+                                        changestring(i, ref strx);
+
+                                        //TODO: evertything thats supposed to happen when I found a numeral
+                                        //maybe first test with deleting them if it really finds them?
+                                    }
+                                }
+                                else
+                                {
+                                    changestring(i, ref strx);
+                                    //TODO: evertything thats supposed to happen when I found a numeral
+                                    //maybe first test with deleting them if it really finds them?
+                                }
+                            }
+                            i++;
+                        }
+                    }
+
+                    else if ((int)strx[i] == 32)
+                    {
+                        i++;
+                        if ((int)strx[i] > 47 && (int)strx[i] < 58)
+                        {
+                            if (i + 1 <= strx.Length - 1)
+                            {
+                                if ((int)strx[i + 1] == 32)
+                                {
+                                    changestring(i, ref strx);
+                                    //TODO: evertything thats supposed to happen when I found a numeral
+                                    //maybe first test with deleting them if it really finds them?
+                                }
+                            }
+                            else
+                            {
+                                changestring(i, ref strx);
+                                //TODO: evertything thats supposed to happen when I found a numeral
+                                //maybe first test with deleting them if it really finds them?
+                            }
+                        }
+                    }
+                    //Spring zum nächsten wenn kein Leerzeichen gefunden wurde
+                    else i++;
+                }
+                Console.WriteLine(strx);
+                Console.ReadLine();
+            }
+
+        }
+    }
+}
+   
