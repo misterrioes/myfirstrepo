@@ -56,14 +56,14 @@ namespace No_numerals
                     break;
 
             }
-            Console.WriteLine("test");
+          
             return;
 
         }
         static void Main(string[] args) {  
 
             string strx = Console.ReadLine();
-            Console.WriteLine("Testweise Ausgbabe: {0}", strx);
+           
             if (strx.Length == 1)
             {
                 int intchartonum = (int)strx[0];
@@ -106,8 +106,7 @@ namespace No_numerals
                     }
                 }
                 Console.WriteLine(strnumtostring);
-                //just so it doesn't close
-                Console.ReadLine();
+               
             }
             /*this else cause is supposed to find the numerals and replace them
              if there is more than one Char in the array
@@ -133,15 +132,15 @@ namespace No_numerals
                                     if ((int)strx[i + 1] == 32)
                                     {
                                         changestring(i, ref strx);
-                                        //TODO: evertything thats supposed to happen when I found a numeral
-                                        //maybe first test with deleting them if it really finds them?
+                                        /*TODO: evertything thats supposed to happen when I found a numeral
+                                        maybe first test with deleting them if it really finds them?*/
                                     }
                                 }
                                 else
                                 {
                                     changestring(i, ref strx);
-                                    //TODO: evertything thats supposed to happen when I found a numeral
-                                    //maybe first test with deleting them if it really finds them?
+                                    /*TODO: evertything thats supposed to happen when I found a numeral
+                                    maybe first test with deleting them if it really finds them?*/
                                 }
                             }
 
@@ -157,15 +156,15 @@ namespace No_numerals
                                     {
                                         changestring(i, ref strx);
 
-                                        //TODO: evertything thats supposed to happen when I found a numeral
-                                        //maybe first test with deleting them if it really finds them?
+                                        /*TODO: evertything thats supposed to happen when I found a numeral
+                                        //maybe first test with deleting them if it really finds them?*/
                                     }
                                 }
                                 else
                                 {
                                     changestring(i, ref strx);
-                                    //TODO: evertything thats supposed to happen when I found a numeral
-                                    //maybe first test with deleting them if it really finds them?
+                                    /*TODO: evertything thats supposed to happen when I found a numeral
+                                    //maybe first test with deleting them if it really finds them?*/
                                 }
                             }
                             i++;
@@ -182,19 +181,19 @@ namespace No_numerals
                                 if ((int)strx[i + 1] == 32)
                                 {
                                     changestring(i, ref strx);
-                                    //TODO: evertything thats supposed to happen when I found a numeral
-                                    //maybe first test with deleting them if it really finds them?
+                                    /*TODO: evertything thats supposed to happen when I found a numeral
+                                    */
                                 }
                             }
-                            else
-                            {
-                                changestring(i, ref strx);
-                                //TODO: evertything thats supposed to happen when I found a numeral
-                                //maybe first test with deleting them if it really finds them?
+                             else
+                             {
+                                 changestring(i, ref strx);
+                                 /*TODO: evertything thats supposed to happen when I found a numeral
+                                 maybe first test with deleting them if it really finds them?*/
+                                }
                             }
-                        }
                     }
-                    //Spring zum nächsten wenn kein Leerzeichen gefunden wurde
+                    /*Spring zum nächsten wenn kein Leerzeichen gefunden wurde*/
                     else i++;
                 }
                 Console.WriteLine(strx);
@@ -204,4 +203,3 @@ namespace No_numerals
         }
     }
 }
-   
